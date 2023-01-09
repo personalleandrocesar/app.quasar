@@ -1,7 +1,8 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="1ff Lpr lFf">
     <q-header elevated>
       <q-toolbar>
+        <img alt="Quasar logo" src="~assets/logo.svg" style="width: 70px; height: 40px;">
         <q-btn
           flat
           dense
@@ -10,12 +11,14 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-
+        
         <q-toolbar-title>
-          Quasar App
+        
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn flat dense round icon="notifications" aria-label="Menu" @click="toggleLeftDrawer"  />
+        <div>
+          <!-- version -->
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -23,12 +26,13 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
+      view=" Lpr lFf"
     >
       <q-list>
         <q-item-label
           header
         >
-          Essential Links
+          Links de navegação
         </q-item-label>
 
         <EssentialLink
@@ -41,6 +45,10 @@
 
     <q-page-container>
       <router-view />
+      
+      <q-page-scroller position="bottom">
+        <q-btn fab icon="keyboard_arrow_up" color="red" />
+      </q-page-scroller>
     </q-page-container>
   </q-layout>
 </template>
@@ -48,50 +56,45 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
+import 'quasar/dist/quasar.css'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Home',
+    caption: 'Seus dados',
+    icon: 'home',
+    link: 'home'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
+    title: 'Feed',
+    caption: 'Notícias',
     icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    link: 'feed'
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
+    title: 'Treino',
+    caption: 'Rotina, sessões',
+    icon: 'fitness_center',
+    link: 'treino'
   },
   {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
+    title: 'Avaliações',
+    caption: 'Antropometria',
+    icon: 'monitor_heart',
+    link: '/avaliacao'
+  },
+  {
+    title: 'Agenda',
+    caption: 'Eventos',
+    icon: 'date_range',
     link: 'https://facebook.quasar.dev'
   },
   {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
+    title: 'Comunidade',
+    caption: 'Tribo Alma Forte',
+    icon: 'groups',
     link: 'https://awesome.quasar.dev'
-  }
+  },
 ]
 
 export default defineComponent({

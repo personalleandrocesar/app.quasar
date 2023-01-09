@@ -1,41 +1,32 @@
 <template>
   <div>
-    <div>
-      <div class='logo'>
-        <LCLogoTree />
-        <h1>professorleandrocesar.com</h1>
-        <h3>Acesse sua conta</h3>
-        <div>
-          <form method="post">
-            <h4>E-mail</h4>
-            <input type="email" name="" id="usuario" placeholder="Digite seu e-mail" autofocus>
-            <br>
-            <h4>Senha</h4>
-            <input type="password" name="" id="senha" placeholder="Digite sua senha">
-            <br>
-            <div class='forgot'>
-            <input class='button-call' type="submit" value="Entrar" id="btn" @click="signIn">
-              <RouterLink to="recuperar">
-                <h5>Esqueci minha senha</h5>
-              </RouterLink>
-            </div>
-          </form>
-        </div>
+    <div class='logo'>
+      <LCLogoTree />
+      <h1>professorleandrocesar.com</h1>
+      <h3>Acesse sua conta</h3>
+      <div class='text'>
+        <h3>Recuperar sua Senha</h3>
+        <h4>Para recuperar sua senha, digite abaixo o e-mail que você recebeu.</h4>
+      </div>
+      <div>
+        <h4>E-mail</h4>
+        <input type="email" name="" id="usuario" placeholder="Digite seu e-mail">
+        <br>
+        <input class='button-call' type="submit" value="Enviar" id="btn">
+
       </div>
     </div>
   </div>
 </template>
-
-
 <script>
 import { defineComponent } from 'vue'
 import LCLogoTree from '../components/LCLogoTree.vue'
 
 
 export default defineComponent({
-  name: 'signIn',
+  name: 'RecuperarPage',
   components: {
-LCLogoTree
+    LCLogoTree
   },
   data() {
     return {
@@ -44,13 +35,6 @@ LCLogoTree
     }
   },
   methods: {
-    signIn(){
-      if(this.email === 'lea@gmail.com' & this.senha === '1234'){
-        this.$router.replace('/user/leandro-cesar/home')
-      } if (this.email === 'cam@gmail.com' & this.senha === '1234') {
-        this.$router.replace('/user/camilla-dimas')
-      }
-    },
     scrollToTop() {
       window.scrollTo(0, 0);
     }
@@ -71,8 +55,8 @@ LCLogoTree
       { rel: 'icon', type: 'image/x-icon', href: '/img/favicon.ico' },
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/img/favicon.svg' },
       { rel: 'apple-touch-icon', size: '180x180', href: '/img/apple-touch-icon.png' },
-      { rel: 'icon', type:'image/png', size: '32x32', href: '/img/favicon-32x32.png' },
-      { rel: 'icon', type:'image/png', size: '16x16', href: '/img/favicon-16x16.png' },
+      { rel: 'icon', type: 'image/png', size: '32x32', href: '/img/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', size: '16x16', href: '/img/favicon-16x16.png' },
       { rel: 'apple-touch-icon', size: '180x180', href: '/img/apple-touch-icon.png' },
       { rel: 'mask-icon', href: '/img/safari-pinned-tab.svg', color: '#002937' }
     ],

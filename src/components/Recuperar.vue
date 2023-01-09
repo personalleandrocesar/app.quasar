@@ -1,60 +1,25 @@
 <template>
   <div>
-    <div>
       <div class='logo'>
-        <LCLogoTree />
-        <h1>professorleandrocesar.com</h1>
+        <LCLogoFive/>
+        <h1>leandrocesar.com</h1>
         <h3>Acesse sua conta</h3>
-        <div>
-          <form method="post">
-            <h4>E-mail</h4>
-            <input type="email" name="" id="usuario" placeholder="Digite seu e-mail" autofocus>
-            <br>
-            <h4>Senha</h4>
-            <input type="password" name="" id="senha" placeholder="Digite sua senha">
-            <br>
-            <div class='forgot'>
-            <input class='button-call' type="submit" value="Entrar" id="btn" @click="signIn">
-              <RouterLink to="recuperar">
-                <h5>Esqueci minha senha</h5>
-              </RouterLink>
-            </div>
-          </form>
+        <div class='text'>
+          <h3>Recuperar sua Senha</h3>
+          <h4>Para recuperar sua senha, digite abaixo o e-mail que você recebeu.</h4>
         </div>
-      </div>
+        <div>
+            <h4>E-mail</h4>
+            <input type="email" name="" id="usuario" placeholder="Digite seu e-mail">
+            <br>
+              <input class='button-call' type="submit" value="Enviar" id="btn">
+  
+          </div>
     </div>
   </div>
 </template>
-
-
 <script>
-import { defineComponent } from 'vue'
-import LCLogoTree from '../components/LCLogoTree.vue'
-
-
-export default defineComponent({
-  name: 'signIn',
-  components: {
-LCLogoTree
-  },
-  data() {
-    return {
-      email: '',
-      senha: '',
-    }
-  },
-  methods: {
-    signIn(){
-      if(this.email === 'lea@gmail.com' & this.senha === '1234'){
-        this.$router.replace('/user/leandro-cesar/home')
-      } if (this.email === 'cam@gmail.com' & this.senha === '1234') {
-        this.$router.replace('/user/camilla-dimas')
-      }
-    },
-    scrollToTop() {
-      window.scrollTo(0, 0);
-    }
-  },
+export default {
   head: {
     title: 'Acesso restrito | leandrocesar.com',
     htmlAttrs: {
@@ -74,17 +39,18 @@ LCLogoTree
       { rel: 'icon', type:'image/png', size: '32x32', href: '/img/favicon-32x32.png' },
       { rel: 'icon', type:'image/png', size: '16x16', href: '/img/favicon-16x16.png' },
       { rel: 'apple-touch-icon', size: '180x180', href: '/img/apple-touch-icon.png' },
+      { rel: 'manifest', href: '/img/site.webmanifest' },
       { rel: 'mask-icon', href: '/img/safari-pinned-tab.svg', color: '#002937' }
     ],
   }
-})
-</script>
+}
+  </script>
 <style scoped>
-.button-call {
+.button-call{
   background: #fadb4190;
   padding: 5px 17px;
   width: 80px;
-  margin: -10px 0 0 -10px;
+  margin: -10px 0 0 0px ;
   border: 1px #ddd solid;
   border-radius: 8px;
   transition: all .4s linear;
@@ -92,10 +58,10 @@ LCLogoTree
 }
 
 .button-call:hover {
-  background: #fadb41;
+  background: #fadb4112 ;
 }
 
-.logo {
+.logo{
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -105,33 +71,43 @@ LCLogoTree
 }
 
 .logo h1 {
-  margin: 40px 0 -10px 0;
+  margin: 40px 0 -20px 0;
+}
+
+.text h3 {
+  margin: 0px 0 20px 40px;
+  text-decoration: solid #fadb41 underline;
+  color: #888;
+}
+
+.text h4 {
+  margin: 0px 20px 20px 40px;
+  color:#aaa;
 }
 
 input {
   height: 2em;
   padding: 0 0 0 10px;
-  margin: 0px 0px 0 -10px;
+  margin: 0px auto 0 auto;
   text-decoration: none;
   transition: all .4s linear;
   color: #777;
   text-indent: 0;
   background: #fff;
-  width: 100%;
   border-radius: 8px 8px 8px 8px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  border: solid 2px #eee;
+  flex-direction: column;   
+  border: solid 2px #eee ;
 }
 
 input:focus {
-  background-color: #fffde1;
+  background-color: #fffde1 ;
 }
 
 #btn:hover {
   background: #fadb4132;
-  color: #888;
+    color: #888;
 }
 
 .forgot {
@@ -141,20 +117,20 @@ input:focus {
   flex-wrap: wrap;
 }
 
-.forgot h5 {
+.forgot h5{
   margin: 0px 0 0px 30px;
   color: #aaa;
-  transition: all .4s linear;
-  border-bottom: solid .1px #ffff;
+  transition: all .4s linear;   
+  border-bottom: solid .1px #fff;
 
 }
 
-.forgot h5:hover {
+.forgot h5:hover{
   margin: 0px 0 0px 30px;
   border-bottom: solid .1px #fadb41;
 }
 
-body {
+  body {
   background: #fff;
   font-family: 'Philosopher', sans-serif;
   color: #aaa;
@@ -165,29 +141,29 @@ iframe {
   margin-left: 10px;
 }
 
-h1 {
-  color: #aaa;
+h1{
+  color:#aaa;
   transition: all .3s linear;
   cursor: pointer;
 }
 
-h3 {
-  color: #aaa;
+h3{
+  color:#aaa;
   transition: all .3s linear;
 }
 
-h4 {
-  color: #aaa;
+h4{
+  color:#aaa;
   transition: all .3s linear;
-  margin: 0 0 0 -10px;
+  margin: 0 0 0 0px;
 }
 
-h1:hover {
-  color: #fadb41;
+h1:hover{
+  color:#fadb41;
 
 }
 
-a {
+a{
   text-decoration: none;
   color: #aaa;
   transition: all .4s linear;
@@ -197,7 +173,7 @@ a:hover {
   color: #fadb41;
 }
 
-svg a {
+svg a{
   text-decoration: none;
   color: #aaa;
   transition: all .4s linear;
@@ -218,27 +194,27 @@ code {
   margin-left: 15px;
   padding-left: 10px;
   border-left: solid 5px #eee;
-  color: #888;
+  color:#888;
 }
 
 .divider {
-  height: 15px;
+  height:15px;
   background-color: #dddddd54;
 }
 
-.nav-one {
+.nav-one{
   height: 35px;
   position: sticky;
   top: -1px;
 }
 
-.nav-one div {
+.nav-one div{
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
 }
 
-.nav-one a {
+.nav-one a{
   text-decoration: none;
   margin: 0 14px 0 6px;
   font-size: 1.2em;
@@ -255,8 +231,8 @@ code {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 10px 0 5px 0;
-  color: black;
+  padding:10px 0 5px 0;
+  color:black;
 }
 
 .profile a {
@@ -284,7 +260,7 @@ code {
   color: #aaa;
 }
 
-.main-one {
+.main-one{
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -297,28 +273,27 @@ code {
   margin: 0 0 0 15px;
 }
 
-.main-one a:nth-child(1) i,
-.main-one a:nth-child(2) i {
+.main-one a:nth-child(1) i, .main-one a:nth-child(2) i{
   padding-right: 4px;
   margin: 0 0 0 3px;
 }
 
-.main-one a:nth-child(2) i {
+.main-one a:nth-child(2) i{
   padding-right: 1px;
   margin: 0 0 0 0;
 }
 
-.main-one a:nth-child(3) i {
+.main-one a:nth-child(3) i{
   padding-right: 5px;
   margin: 0 0 0 2px;
-}
+} 
 
-.main-one a:nth-child(4) i {
+.main-one a:nth-child(4) i{
   padding-right: 4px;
   margin: 0 0 0 2px;
 }
 
-.main-one a {
+.main-one a{
   margin: 0 0 0 10px;
   color: #555;
 }
@@ -329,7 +304,7 @@ code {
   flex-direction: column;
   padding: 15px 0 15px 0;
   color: black;
-  box-shadow: 4px 4px 10px #bbb;
+  box-shadow:  4px 4px 10px #bbb;
 }
 
 .main-tree {
@@ -338,7 +313,7 @@ code {
   flex-direction: column;
   margin: -10px 0 0 0;
   color: #555;
-  overflow-x: auto;
+  overflow-x:auto;
 }
 
 .main-tree i {
@@ -346,7 +321,7 @@ code {
   color: #555;
 }
 
-.main-tree h5 {
+.main-tree h5{
   margin-left: 10px;
 }
 
@@ -357,7 +332,7 @@ code {
   margin: -10px 0 0 0;
   color: #555;
   box-shadow: 0px 10px 10px#bbb;
-  overflow-x: auto;
+  overflow-x:auto;
 }
 
 .main-four i {
@@ -365,7 +340,7 @@ code {
   color: #555;
 }
 
-.main-four h5 {
+.main-four h5{
   margin-left: 10px;
 }
 
@@ -383,7 +358,6 @@ code {
   width: 500px;
   border-radius: 3% 3% 3% 3%;
 }
-
 .main-four-card span {
   position: relative;
   top: -6px;
@@ -406,7 +380,7 @@ code {
   margin: -10px 0 0 0;
   color: #555;
   box-shadow: 0px 10px 10px#bbb;
-  overflow-x: auto;
+  overflow-x:auto;
 }
 
 .main-five i {
@@ -414,7 +388,7 @@ code {
   color: #555;
 }
 
-.main-five h5 {
+.main-five h5{
   margin-left: 10px;
 }
 
@@ -432,7 +406,6 @@ code {
   width: 500px;
   border-radius: 3% 3% 3% 3%;
 }
-
 .main-five-card span {
   position: relative;
   top: -6px;
@@ -455,7 +428,7 @@ code {
   margin: -10px 0 0 0;
   color: #555;
   box-shadow: 0px 10px 10px#bbb;
-  overflow-x: auto;
+  overflow-x:auto;
 }
 
 .main-six i {
@@ -463,11 +436,11 @@ code {
   color: #555;
 }
 
-.main-six h5 {
+.main-six h5{
   margin-left: 10px;
 }
 
-.main-six h5 {
+.main-six h5{
   margin: 10px;
 }
 
@@ -485,7 +458,6 @@ code {
   width: 500px;
   border-radius: 3% 3% 3% 3%;
 }
-
 .main-six-card span {
   position: relative;
   top: -6px;
@@ -508,7 +480,7 @@ code {
   margin: -10px 0 0 0;
   color: #555;
   box-shadow: 0px 10px 10px#bbb;
-  overflow-x: auto;
+  overflow-x:auto;
 }
 
 .main-seven i {
@@ -516,26 +488,25 @@ code {
   color: #555;
 }
 
-.main-seven h5 {
+.main-seven h5{
   margin-left: 10px;
 }
 
 .main-seven-card {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  margin: auto;
+  flex-direction: column;   
+  margin:auto;
 
 }
 
 .main-seven-card a {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  margin: 10px auto 20px auto;
-  width: 60%;
+  flex-direction: column;   
+  margin:10px auto 20px auto  ;
+  width:60%;
 }
-
 .main-seven-card span {
   position: relative;
   top: -6px;
@@ -558,10 +529,13 @@ code {
   padding: 0 15px 0 0;
 }
 
-style {
-  background-color: black;
+style{
+    background-color: black;
 }
 
 
-@media only screen and (max-width: 369px) {}
+@media only screen and (max-width: 369px) {
+
+  }
+
 </style>

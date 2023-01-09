@@ -48,6 +48,10 @@ body {
   line-height: 1.6;
 }
 
+.bg-brand-blue {
+  background: #095D62 !important;
+}
+
 .anima {
   animation-direction: top;
   animation: opacityAnimation 1s;
